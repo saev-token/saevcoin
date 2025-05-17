@@ -28,7 +28,37 @@
             <img src="hero4.png" alt="Hero 4">
         </div>
     </section>
+<section id="airdrop" style="text-align: center; padding: 50px; background: #1a0033; color: #fff;">
+  <h2>🚀 $SAEV Airdrop – Вземи 5,000 SAEV</h2>
+  <img src="airdrop-banner.png" alt="$SAEV Airdrop" style="max-width: 500px; width: 90%; margin: 20px auto;">
+  
+  <button onclick="connectWallet()" style="padding: 15px 30px; font-size: 18px; background: gold; color: black; border: none; border-radius: 10px; cursor: pointer;">Свържи MetaMask</button>
+  
+  <p id="walletAddress" style="margin-top: 15px; font-weight: bold;"></p>
+</section>
 
+<script>
+  async function connectWallet() {
+    if (typeof window.ethereum !== 'undefined') {
+      try {
+        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+        document.getElementById('walletAddress').innerText = 'Свързан адрес: ' + accounts[0];
+
+        // TODO: Тук можеш да пратиш адреса към Google Sheet или сървър
+        // Пример:
+        // fetch('https://your-backend.com/save-wallet', {
+        //   method: 'POST',
+        //   headers: { 'Content-Type': 'application/json' },
+        //   body: JSON.stringify({ wallet: accounts[0] })
+        // });
+      } catch (err) {
+        alert('Отказан достъп до MetaMask');
+      }
+    } else {
+      alert('Инсталирай MetaMask разширение!');
+    }
+  }
+</script>
     <section class="battle">
         <h2>⚔️ Coin Battles</h2>
         <p>Next battle begins in: <span id="countdown"></span></p>
