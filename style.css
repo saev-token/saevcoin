@@ -1,0 +1,69 @@
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: #f8f9fa;
+    color: #222;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ffd700;
+    padding: 20px;
+    animation: fadeIn 2s ease-in;
+}
+
+.slogan {
+    font-size: 1.2em;
+    color: #444;
+}
+
+.airdrop, .gallery, .battle {
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff5c4;
+    border-radius: 10px;
+    max-width: 700px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+button {
+    background: #ff8c00;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1em;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #e67e00;
+}
+
+.nft-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.nft-grid img {
+    width: 150px;
+    height: auto;
+    border: 3px solid #ffd700;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+footer {
+    background: #222;
+    color: white;
+    padding: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
