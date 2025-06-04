@@ -1,39 +1,33 @@
 <!DOCTYPE html>
 <html lang="bg">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>$SAEV NFT Колекция</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Качване на NFT – $SAEV</title>
   <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body class="bg-gray-50 text-gray-800">
-
-  <div class="max-w-4xl mx-auto px-4 py-10">
-    <h1 class="text-3xl font-bold text-center text-yellow-700 mb-6">NFT Колекция: Добавяне на монета</h1>
-
-    <!-- Форма за регистрация -->
-    <div class="bg-white shadow p-6 rounded-lg mb-10">
-      <h2 class="text-xl font-semibold mb-4">Регистрация</h2>
-      <form>
-        <input type="text" placeholder="Потребителско име" class="w-full border p-2 mb-3 rounded" required />
-        <input type="email" placeholder="Имейл" class="w-full border p-2 mb-3 rounded" required />
-        <input type="password" placeholder="Парола" class="w-full border p-2 mb-3 rounded" required />
-        <button class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700">Регистрирай се</button>
-      </form>
-    </div>
-
-    <!-- Форма за качване на NFT -->
-    <div class="bg-white shadow p-6 rounded-lg">
-      <h2 class="text-xl font-semibold mb-4">Качи нова монета</h2>
-      <form>
-        <input type="text" placeholder="Име на монетата" class="w-full border p-2 mb-3 rounded" required />
-        <textarea placeholder="Описание" class="w-full border p-2 mb-3 rounded" rows="3" required></textarea>
-        <input type="file" accept="image/*" class="w-full border p-2 mb-3 rounded" required />
-        <button class="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800">Качи NFT</button>
-      </form>
+  <div class="max-w-2xl mx-auto py-10 px-4">
+    <h1 class="text-3xl font-bold text-yellow-700 mb-6">Качване на NFT</h1>
+    <form class="space-y-4">
+      <div>
+        <label class="block text-gray-700">Име на монета или банкнота</label>
+        <input type="text" class="w-full border-gray-300 rounded-lg px-4 py-2" required>
+      </div>
+      <div>
+        <label class="block text-gray-700">Изображение (JPG/PNG)</label>
+        <input type="file" accept="image/*" class="w-full" required>
+      </div>
+      <div>
+        <label class="block text-gray-700">Описание</label>
+        <textarea class="w-full border-gray-300 rounded-lg px-4 py-2" rows="4"></textarea>
+      </div>
+      <button type="submit" class="bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-2 rounded-lg font-semibold">Качи NFT</button>
+    </form>
+    <div class="mt-6">
+      <a href="index.html" class="text-blue-600 hover:underline">← Обратно към началната страница</a>
     </div>
   </div>
-
 </body>
 </html>
