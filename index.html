@@ -70,6 +70,8 @@
   <section id="latest-coins" class="py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4">
       <h3 class="text-3xl font-semibold text-center text-gray-800 mb-10">Последно добавени монети</h3>
+      <div id="latestCoins" class="grid md:grid-cols-3 lg:grid-cols-3 gap-6"></div> 
+      <script> function loadCoins() { const container = document.getElementById('latestCoins'); const stored = JSON.parse(localStorage.getItem('coins') || '[]'); const latest = stored.slice(-6).reverse(); latest.forEach(coin => { const el = document.createElement('div'); el.className = 'bg-gray-100 rounded-lg shadow p-4 text-center'; el.innerHTML = ` <img src="${coin.image}" alt="${coin.title}" class="mx-auto h-32 object-contain mb-2" /> <h4 class="text-lg font-semibold">${coin.title}</h4> <p class="text-sm text-gray-600">${coin.description}</p> `; container.appendChild(el); }); } window.addEventListener('DOMContentLoaded', loadCoins); </script>
       <div class="grid md:grid-cols-3 lg:grid-cols-3 gap-6">
         <div class="bg-gray-100 rounded-lg shadow p-4 text-center">
           <img src="https://www.coin-database.com/coins/1lev_1999.jpg" alt="1 лев 1999" class="mx-auto h-32 object-contain mb-2" />
