@@ -1,0 +1,11 @@
+<form id="coinForm" class="max-w-xl mx-auto bg-white shadow p-6 rounded mt-10"> <h3 class="text-2xl font-bold mb-4">Добави нова монета</h3> <label class="block mb-2 font-semibold">Име на монета:</label> <input type="text" id="title" required class="w-full border px-3 py-2 rounded mb-4">
+<label class="block mb-2 font-semibold">Описание:</label>
+
+<textarea id="description" rows="3" required class="w-full border px-3 py-2 rounded mb-4"></textarea>
+<label class="block mb-2 font-semibold">Изображение (ще се запише като Base64):</label>
+<input type="file" id="image" accept="image/*" required class="mb-4">
+
+<button type="submit" class="bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-2 rounded">Запиши монетата</button>
+
+</form> <script> document.getElementById('coinForm').addEventListener('submit', function (e) { e.preventDefault(); const reader = new FileReader(); 
+                                                                                              const file = document.getElementById('image').files[0]; reader.onload = function () { const newCoin = { title: document.getElementById('title').value, description: document.getElementById('description').value, image: reader.result, date: Date.now() }; const stored = JSON.parse(localStorage.getItem('coins') || '[]'); stored.push(newCoin); localStorage.setItem('coins', JSON.stringify(stored)); alert('Монетата е добавена!'); window.location.href = 'index.html'; }; if (file) { reader.readAsDataURL(file); } }); </script>
