@@ -15,17 +15,28 @@
         <img src="favicon.ico" alt="$SAEV Token лого" class="w-8 h-8">
         <h1 class="text-2xl font-bold text-yellow-700">$SAEV Token</h1>
       </div>
-      <nav class="space-x-6">
-        <a href="#about" class="hover:text-yellow-600">За проекта</a>
-        <a href="#nfts" class="hover:text-yellow-600">NFT Колекции</a>
-        <a href="nft-gallery.html" class="hover:text-yellow-600 font-semibold">Качи NFT</a>
-        <a href="registration.html" class="hover:text-yellow-600">Регистрация</a>
-        <a href="#token" class="hover:text-yellow-600">Токен</a>
-        <a href="#whitepaper" class="hover:text-yellow-600">Whitepaper</a>
-        <a href="#contact" class="hover:text-yellow-600">Контакт</a>
+      <nav>
+        <button id="menu-button" class="md:hidden text-yellow-700 focus:outline-none">
+          ☰ Меню
+        </button>
+        <div id="menu" class="hidden md:flex md:space-x-6 flex-col md:flex-row mt-2 md:mt-0 text-center md:text-left">
+          <a href="#about" class="block py-1 md:py-0 hover:text-yellow-600">За проекта</a>
+          <a href="#nfts" class="block py-1 md:py-0 hover:text-yellow-600">NFT Колекции</a>
+          <a href="nft-gallery.html" class="block py-1 md:py-0 hover:text-yellow-600 font-semibold">Качи NFT</a>
+          <a href="registration.html" class="block py-1 md:py-0 hover:text-yellow-600">Регистрация</a>
+          <a href="#token" class="block py-1 md:py-0 hover:text-yellow-600">Токен</a>
+          <a href="#whitepaper" class="block py-1 md:py-0 hover:text-yellow-600">Whitepaper</a>
+          <a href="#contact" class="block py-1 md:py-0 hover:text-yellow-600">Контакт</a>
+        </div>
       </nav>
     </div>
   </header>
+  <script>
+    document.getElementById('menu-button').addEventListener('click', function () {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('hidden');
+    });
+  </script>
 
   <!-- Hero секция -->
   <section class="bg-gradient-to-r from-yellow-100 to-blue-100 py-20 text-center">
