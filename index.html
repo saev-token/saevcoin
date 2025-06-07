@@ -1,13 +1,21 @@
 <!DOCTYPE html>
-<html lang="bg">
+<html lang="bg" class="">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>$SAEV Token – Дигитална нумизматика</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <script>
+    // Приложи запомнената тема веднага, преди рендериране
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
 </head>
 <body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+
   <!-- Навигация -->
   <header class="bg-white dark:bg-gray-800 shadow">
     <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
@@ -16,9 +24,7 @@
         <h1 class="text-2xl font-bold text-yellow-700">$SAEV Token</h1>
       </div>
       <nav>
-        <button id="menu-button" class="md:hidden text-yellow-700 focus:outline-none">
-          ☰ Меню
-        </button>
+        <button id="menu-button" class="md:hidden text-yellow-700 focus:outline-none">☰ Меню</button>
         <div id="menu" class="hidden md:flex md:space-x-6 flex-col md:flex-row mt-2 md:mt-0 text-center md:text-left">
           <a href="#about" class="block py-1 md:py-0 hover:text-yellow-600">За проекта</a>
           <a href="#nfts" class="block py-1 md:py-0 hover:text-yellow-600">NFT Колекции</a>
@@ -27,36 +33,33 @@
           <a href="#token" class="block py-1 md:py-0 hover:text-yellow-600">Токен</a>
           <a href="#whitepaper" class="block py-1 md:py-0 hover:text-yellow-600">Whitepaper</a>
           <a href="#contact" class="block py-1 md:py-0 hover:text-yellow-600">Контакт</a>
+          <button id="themeToggle" class="ml-4 text-sm px-3 py-1 border rounded-lg text-gray-600 dark:text-gray-300 hover:text-yellow-700 hover:border-yellow-600">
+            🌗 Смени тема
+          </button>
         </div>
-        <button id="themeToggle" class="ml-4 text-sm px-3 py-1 border rounded-lg text-gray-600 hover:text-yellow-700 hover:border-yellow-600">
-      🌗 Смени тема
-            </button>
       </nav>
     </div>
   </header>
-  <script>
-  const toggleBtn = document.getElementById('themeToggle');
-  const html = document.documentElement;
 
-  // Запази предпочитание в localStorage
-  if (localStorage.getItem('theme') === 'dark') {
-    html.classList.add('dark');
-  }
-
-  toggleBtn.addEventListener('click', () => {
-    html.classList.toggle('dark');
-    if (html.classList.contains('dark')) {
-      localStorage.setItem('theme', 'dark');
-    } else {
-      localStorage.setItem('theme', 'light');
-    }
-  });
-</script>
-
+  <!-- Меню мобилно -->
   <script>
     document.getElementById('menu-button').addEventListener('click', function () {
-      const menu = document.getElementById('menu');
-      menu.classList.toggle('hidden');
+      document.getElementById('menu').classList.toggle('hidden');
+    });
+  </script>
+
+  <!-- Скрипт за смяна на тема -->
+  <script>
+    const toggleBtn = document.getElementById('themeToggle');
+    const html = document.documentElement;
+
+    toggleBtn.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      if (html.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.setItem('theme', 'light');
+      }
     });
   </script>
   
