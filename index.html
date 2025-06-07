@@ -40,6 +40,24 @@
       menu.classList.toggle('hidden');
     });
   </script>
+  <script>
+  const toggleBtn = document.getElementById('themeToggle');
+  const html = document.documentElement;
+
+  // Запази предпочитание в localStorage
+  if (localStorage.getItem('theme') === 'dark') {
+    html.classList.add('dark');
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    html.classList.toggle('dark');
+    if (html.classList.contains('dark')) {
+      localStorage.setItem('theme', 'dark');
+    } else {
+      localStorage.setItem('theme', 'light');
+    }
+  });
+</script>
 
   <!-- Hero секция -->
   <section class="bg-gradient-to-r from-yellow-100 to-blue-100 py-20 text-center">
@@ -60,7 +78,7 @@
   </section>
 
   <!-- Такси и услуги -->
-  <section id="fees" class="py-16 bg-yellow-50">
+  <section id="fees" class="py-16 bg-yellow-50 dark:bg-gray-800 dark:text-gray-100">
     <section class="bg-white dark:bg-gray-900">
     <div class="max-w-5xl mx-auto px-4 text-center">
       <h3 class="text-3xl font-semibold text-gray-800 mb-8">Такси и услуги</h3>
@@ -94,7 +112,7 @@
   </section>
 
   <!-- NFT Колекции -->
-  <section id="nfts" class="py-16 bg-gray-50">
+  <section id="nfts" class="py-16 bg-gray-50 dark:bg-gray-900 dark:text-gray-100">
     <section class="bg-white dark:bg-gray-900">
     <div class="max-w-6xl mx-auto px-4">
       <h3 class="text-3xl font-semibold text-center text-gray-800 mb-8">NFT Колекции</h3>
@@ -116,7 +134,7 @@
   </section>
 
   <!-- Последни монети -->
-  <section id="latest-coins" class="py-16 bg-white">
+  <section id="latest-coins" class="py-16 bg-white dark:bg-gray-900 dark:text-gray-100">
     <div class="max-w-7xl mx-auto px-4">
       <h3 class="text-3xl font-semibold text-center text-gray-800 mb-10">Последно добавени монети</h3>
       <div id="latestCoins" class="grid md:grid-cols-3 lg:grid-cols-3 gap-6"></div> 
@@ -157,7 +175,7 @@
   </section>
 
   <!-- SAEV Token -->
-  <section id="contact" class="py-16 bg-white dark:bg-gray-800 dark:text-gray-100">
+  <section id="token" class="py-16 bg-white dark:bg-gray-800 dark:text-gray-100">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h3 class="text-3xl font-semibold text-gray-800 mb-6">$SAEV Token – крипто основа на колекционерството</h3>
       <p class="text-gray-600">$SAEV е BEP-20 токен в BNB Smart Chain, който позволява търговия, възнаграждения и участие в управлението на дигитални нумизматични активи.</p>
@@ -165,7 +183,7 @@
   </section>
 
   <!-- Whitepaper -->
-  <section id="contact" class="py-16 bg-white dark:bg-gray-800 dark:text-gray-100">
+  <section id="whitepaper" class="py-16 bg-gray-50 dark:bg-gray-900 dark:text-gray-100">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h3 class="text-3xl font-semibold text-gray-800 mb-6">Whitepaper</h3>
       <p class="text-gray-600 mb-4">Прочети официалния документ за идеята, токеномиката и бъдещето на $SAEV Token.</p>
@@ -185,24 +203,7 @@
     © 2025 $SAEV Token. Всички права запазени.
   </footer>
 
-  <script>
-  const toggleBtn = document.getElementById('themeToggle');
-  const html = document.documentElement;
-
-  // Запази предпочитание в localStorage
-  if (localStorage.getItem('theme') === 'dark') {
-    html.classList.add('dark');
-  }
-
-  toggleBtn.addEventListener('click', () => {
-    html.classList.toggle('dark');
-    if (html.classList.contains('dark')) {
-      localStorage.setItem('theme', 'dark');
-    } else {
-      localStorage.setItem('theme', 'light');
-    }
-  });
-</script>
+  
   
 </body>
 </html>
