@@ -35,12 +35,6 @@
     </div>
   </header>
   <script>
-    document.getElementById('menu-button').addEventListener('click', function () {
-      const menu = document.getElementById('menu');
-      menu.classList.toggle('hidden');
-    });
-  </script>
-  <script>
   const toggleBtn = document.getElementById('themeToggle');
   const html = document.documentElement;
 
@@ -59,6 +53,13 @@
   });
 </script>
 
+  <script>
+    document.getElementById('menu-button').addEventListener('click', function () {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('hidden');
+    });
+  </script>
+  
   <!-- Hero секция -->
   <section class="bg-gradient-to-r from-yellow-100 to-blue-100 py-20 text-center">
     <div class="max-w-3xl mx-auto px-4">
